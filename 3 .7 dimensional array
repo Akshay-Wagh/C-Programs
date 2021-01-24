@@ -1,0 +1,224 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<malloc.h>
+
+int main()
+{
+	int *******p=NULL;
+	int a=0,b=0,c=0,d=0,e=0,f=0,g=0;
+	int first=0,second=0,third=0,fourth=0,fifth=0,sixth=0,seventh=0;
+
+	printf("Enter the Dimension");
+	scanf("%d%d%d%d%d%d%d",&first,&second,&third,&fourth,&fifth,&sixth,&seventh);
+
+	//Allocate Dynamic memory.....
+
+	p=(int *******)malloc(first*sizeof(int******));
+
+	for(a=0;a<first;a++)
+	{
+		p[a]=(int******)malloc(second*sizeof(int *****));
+	}
+	for(a=0;a<first;a++)
+	{
+		for(b=0;b<second;b++)
+		{
+		  p[a][b]=(int*****)malloc(third*sizeof(int****));
+	}
+	}
+	for(a=0;a<first;a++)
+	{
+		for(b=0;b<second;b++)
+		{
+			for(c=0;c<third;c++)
+			{
+		       p[a][b][c]=(int****)malloc(fourth*sizeof(int***));
+			}
+	
+		}
+	}
+	 
+	for(a=0;a<first;a++)
+	{
+		for(b=0;b<second;b++)
+		{
+			for(c=0;c<third;c++)
+			{
+				for(d=0;d<fourth;d++)
+				{
+		           p[a][b][c][d]=(int***)malloc(fifth*sizeof(int**));
+				}
+			}
+		}
+	}
+
+	for(a=0;a<first;a++)
+	{
+		for(b=0;b<second;b++)
+		{
+			for(c=0;c<third;c++)
+			{
+				for(d=0;d<fourth;d++)
+				{
+                    for(e=0;e<fifth;e++)
+					{
+		                 p[a][b][c][d][e]=(int**)malloc(sixth*sizeof(int*));
+					}
+				}
+			}
+		}
+	}
+
+	for(a=0;a<first;a++)
+	{
+		for(b=0;b<second;b++)
+		{
+			for(c=0;c<third;c++)
+			{
+				for(d=0;d<fourth;d++)
+				{
+                    for(e=0;e<fifth;e++)
+					{
+						for(f=0;f<sixth;f++)
+						{
+		                     p[a][b][c][d][e][f]=(int*)malloc(seventh*sizeof(int));
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//Accept the element.....
+
+	printf("enter the elements");
+	for(a=0;a<first;a++)
+	{
+		for(b=0;b<second;b++)
+		{
+			for(c=0;c<third;c++)
+			{
+				for(d=0;d<fourth;d++)
+				{
+                    for(e=0;e<fifth;e++)
+					{
+						for(f=0;f<sixth;f++)
+						{
+							for(g=0;g<sixth;g++)
+							{
+								scanf("%d",&p[a][b][c][d][e][f][g]);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//Print elements.....
+
+	printf("entered elements are\n");
+	for(a=0;a<first;a++)
+	{
+		for(b=0;b<second;b++)
+		{
+			for(c=0;c<third;c++)
+			{
+				for(d=0;d<fourth;d++)
+				{
+                    for(e=0;e<fifth;e++)
+					{
+						for(f=0;f<sixth;f++)
+						{
+							for(g=0;g<sixth;g++)
+							{
+								printf("%d",p[a][b][c][d][e][f][g]);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	//Deallocate memory.....
+
+	for(a=0;a<first;a++)
+	{
+		for(b=0;b<second;b++)
+		{
+			for(c=0;c<third;c++)
+			{
+				for(d=0;d<fourth;d++)
+               	{
+	             	for(e=0;e<fifth;e++)
+	            	{
+			            for(f=0;f<sixth;f++)
+		             	{
+			                free(p[a][b][c][d][e][f]);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	for(a=0;a<first;a++)
+	{
+		for(b=0;b<second;b++)
+		{
+			for(c=0;c<third;c++)
+			{
+				for(d=0;d<fourth;d++)
+               	{
+	             	for(e=0;e<fifth;e++)
+	            	{
+			            free(p[a][b][c][d][e]);
+					}
+				}
+			}
+		}
+	}
+
+	for(a=0;a<first;a++)
+	{
+		for(b=0;b<second;b++)
+		{
+			for(c=0;c<third;c++)
+			{
+				for(d=0;d<fourth;d++)
+               	{
+					 free(p[a][b][c][d]);
+				}
+			}
+		}
+	}
+
+	for(a=0;a<first;a++)
+	{
+		for(b=0;b<second;b++)
+		{
+			for(c=0;c<third;c++)
+			{
+                free(p[a][b][c]);
+			}
+		}
+	}
+
+	for(a=0;a<first;a++)
+	{
+		for(b=0;b<second;b++)
+		{
+			free(p[a][b]);
+		}
+	}
+
+
+	for(a=0;a<first;a++)
+	{
+		free(p[a]);
+	}
+
+	free(p);
+	return 0;
+}
